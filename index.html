@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GrowMind — Slow Living</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    #website-options{display:none;padding-top:20px;}
+    .back-btn{
+      display:inline-block;margin-bottom:15px;
+      padding:8px 14px;background:#0f172a;
+      color:#fff;border-radius:8px;text-decoration:none;font-size:14px;
+    }
+    .back-btn:hover{opacity:.8;}
+
+    /* LOGO */
+    .logo-img img{
+      width:56px;height:56px;border-radius:10px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 6px 18px rgba(2,6,23,0.15);
+    }
+
+    /* POPUP BACKGROUND */
+    .popup-bg {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+    }
+
+    /* POPUP BOX */
+    .popup-box {
+      background: #fff;
+      width: 90%;
+      max-width: 420px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+      animation: popupFade .35s ease;
+    }
+
+    .popup-box h3 {
+      margin: 0 0 8px 0;
+    }
+
+    .popup-box p {
+      margin: 6px 0;
+    }
+
+    @keyframes popupFade {
+      from {opacity:0; transform: scale(.9);}
+      to {opacity:1; transform: scale(1);}
+    }
+
+    /* BUTTON WA */
+    .wa-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .wa-btn:hover { opacity: .8; }
+
+    .close-btn {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      color: #444;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+
+      <!-- BRAND + LOGO BARU -->
+      <div class="brand">
+        <div class="logo-img">
+          <img src="logo.png" alt="GrowMind Logo">
+        </div>
+        <div class="brand-text">
+          <h1>GrowMind</h1>
+          <p class="tag">Slow Living</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+  <a onclick="showHome()">Home</a>
+  <a onclick="showPackages()">Paket</a>
+  <a href="#about">Tentang</a>
+  <a href="#services">Layanan</a>
+  <a href="#contact" class="btn-outline">Kontak</a>
+</nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HOME SECTION ================= -->
+    <div id="home-section">
+
+      <section id="about" class="card fade-up">
+        <h2>Tentang Kami</h2>
+        <p>Kami adalah perusahaan jasa web developer yang fokus memberikan solusi digital profesional, tepat waktu, dan sesuai kebutuhan bisnis.</p>
+      </section>
+
+      <section id="services" class="card fade-up delay-1">
+        <h2>Layanan Kami</h2>
+        <div class="services-grid">
+
+          <article class="service" onclick="showWebsiteOptions()" style="cursor:pointer;">
+            <h3>Web Development</h3>
+            <p>Pembuatan website profesional sesuai kebutuhan bisnis.</p>
+          </article>
+
+          <article class="service">
+            <h3>UI / UX Design</h3>
+            <p>Desain antarmuka modern dan mudah digunakan.</p>
+          </article>
+
+          <article class="service">
+            <h3>Maintenance & SEO</h3>
+            <p>Perawatan website dan optimasi mesin pencari.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="contact" class="card fade-up delay-2">
+        <h2>Kontak Kami</h2>
+
+        <div class="contact-grid">
+          <div>
+            <p><strong>Email</strong><br>support@growmind.id</p>
+            <p><strong>Telepon</strong><br>+62 812-3456-7890</p>
+          </div>
+
+          <div>
+            <p><strong>Alamat Kantor</strong><br>
+            Jl. Contoh Perusahaan No. 45<br>
+            Jakarta, Indonesia
+            </p>
+
+            <p><strong>Jam Operasional</strong><br>
+            Senin – Jumat, 09:00–17:00
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ================= WEBSITE OPTIONS ================= -->
+    <div id="website-options" class="card fade-up">
+      <a class="back-btn" onclick="showHome()">← Kembali</a>
+      <h2>Pilih Jenis Website</h2>
+
+      <div class="services-grid">
+        <article class="service">
+          <h3>Website Perusahaan</h3>
+          <p>Website profil bisnis profesional.</p>
+        </article>
+
+        <article class="service">
+          <h3>Landing Page</h3>
+          <p>Promosi khusus 1 produk/jasa.</p>
+        </article>
+
+        <article class="service">
+          <h3>Toko Online (E-commerce)</h3>
+          <p>Keranjang, pembayaran, & listing produk.</p>
+        </article>
+
+        <article class="service">
+          <h3>Portofolio</h3>
+          <p>Cocok untuk freelancer & kreator.</p>
+        </article>
+
+        <article class="service">
+          <h3>Blog</h3>
+          <p>Posting artikel lengkap kategori.</p>
+        </article>
+
+        <article class="service">
+          <h3>Custom System</h3>
+          <p>Dashboard, login, admin panel.</p>
+        </article>
+      </div>
+    </div>
+
+<!-- ================= PAKET PRICING SECTION ================= -->
+<div id="packages-section" class="card fade-up" style="display:none;">
+  <a class="back-btn" onclick="showHome()">← Kembali</a>
+  <h2>Paket Harga</h2>
+
+  <div class="services-grid">
+
+    <article class="service">
+      <h3>Paket Normal</h3>
+      <p>Paket dasar untuk website sederhana.</p>
+      <h2 class="price">Rp 1.000.000</h2>
+    </article>
+
+    <article class="service">
+      <h3>Paket Pro</h3>
+      <p>Paket lengkap untuk bisnis yang ingin tampil profesional.</p>
+      <h2 class="price">Rp 2.000.000</h2>
+    </article>
+
+    <article class="service">
+      <h3>Paket Full</h3>
+      <p>Paket premium untuk kebutuhan website skala penuh.</p>
+      <h2 class="price">Rp 3.000.000</h2>
+    </article>
+
+  </div>
+</div>
+
+
+
+
+
+  </main>
+
+  <!-- POPUP DETAIL WEBSITE -->
+  <div class="popup-bg" id="popupBg">
+    <div class="popup-box" id="popupBox">
+      <h3 id="popupTitle">Judul</h3>
+      <p id="popupDesc">Deskripsi...</p>
+
+      <a id="popupWA" class="wa-btn" target="_blank">Order via WhatsApp</a>
+
+      <div class="close-btn" onclick="closePopup()">Tutup</div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> GrowMind — All rights reserved.</p>
+  </footer>
+
+<script>
+  // update tahun otomatis
+  document.getElementById('year').innerText = new Date().getFullYear();
+
+  // SHOW/HIDE HALAMAN
+  function showHome() {
+    document.getElementById("home-section").style.display = "block";
+    document.getElementById("website-options").style.display = "none";
+    document.getElementById("packages-section").style.display = "none";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function showWebsiteOptions() {
+    document.getElementById("home-section").style.display = "none";
+    document.getElementById("website-options").style.display = "block";
+    document.getElementById("packages-section").style.display = "none";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function showPackages() {
+    document.getElementById("home-section").style.display = "none";
+    document.getElementById("website-options").style.display = "none";
+    document.getElementById("packages-section").style.display = "block";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+
+/* ====================== */
+/*   POPUP DETAIL WEBSITE */
+/* ====================== */
+const popupBg = document.getElementById("popupBg");
+const popupTitle = document.getElementById("popupTitle");
+const popupDesc = document.getElementById("popupDesc");
+const popupWA = document.getElementById("popupWA");
+
+function openPopup(title, desc) {
+  popupTitle.innerText = title;
+  popupDesc.innerText = desc;
+
+  popupWA.href =
+    `https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20${encodeURIComponent(title)}%20dari%20GrowMind`;
+
+  popupBg.style.display = "flex";
+}
+
+function closePopup() {
+  popupBg.style.display = "none";
+}
+
+/* ====================== */
+/*   CARD CLICK EVENT     */
+/* ====================== */
+document.querySelectorAll("#website-options .service").forEach((card) => {
+  card.addEventListener("click", () => {
+    const title = card.querySelector("h3").innerText;
+    const desc = card.querySelector("p").innerText;
+    openPopup(title, desc);
+  });
+});
+</script>
+
+</body>
+</html>
